@@ -7,8 +7,8 @@
     <ProjectGuid>{FDEE3C99-7725-4568-B3AA-E67156C033C6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MusicianHelper.NativeVideoEncoderProcess</RootNamespace>
-    <AssemblyName>MusicianHelper.NativeVideoEncoderProcess</AssemblyName>
+    <RootNamespace>SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderProcess</RootNamespace>
+    <AssemblyName>SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderProcess</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

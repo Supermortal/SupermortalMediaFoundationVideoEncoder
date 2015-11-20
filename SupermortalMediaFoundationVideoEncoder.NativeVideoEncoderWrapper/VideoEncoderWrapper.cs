@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MusicianHelper.NativeVideoEncoderProcess
+namespace SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderProcess
 {
 
     public class EncodingPercentageUpdatedEventArgs : EventArgs
@@ -36,7 +36,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
 
                     sb.Append(part);
                     sb.Append('\\');
-                    if (part == "MusicianHelper")
+                    if (part == "SupermortalMediaFoundationVideoEncoder")
                     {
                         break;
                     }
@@ -48,7 +48,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             return _basePath;
 #endif
 
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Musician Helper");
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SupermortalMediaFoundationVideoEncoder");
         }
 
         private string _workingDirectory = null;
@@ -57,7 +57,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             //if (_workingDirectory == null)
             //{
                 var sb = new StringBuilder();
-                sb.Append("MusicianHelper.NativeVideoEncoderWrapper\\");
+                sb.Append("SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderWrapper\\");
                 sb.Append(module);
                 sb.Append('\\');
                 var config = "Release";
@@ -93,7 +93,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
 
             //strCommand is path and file name of command to run
-            pProcess.StartInfo.FileName = Path.Combine(encoderPath, "MusicianHelper.MediaFoundationVideoEncoder.exe");
+            pProcess.StartInfo.FileName = Path.Combine(encoderPath, "SupermortalMediaFoundationVideoEncoder.Encoder.exe");
 
             var sb = new StringBuilder();
             sb.Append(imageFilePath);
@@ -104,10 +104,10 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             //strCommandParameters are parameters to pass to program
             pProcess.StartInfo.Arguments = sb.ToString();
 
-            pProcess.StartInfo.UseShellExecute = false;
-
-            //Set output of program to be written to process output stream
             pProcess.StartInfo.RedirectStandardOutput = true;
+            pProcess.StartInfo.RedirectStandardError = true;
+            pProcess.StartInfo.UseShellExecute = false;
+            pProcess.StartInfo.CreateNoWindow = true;
 
             //Optional
             pProcess.StartInfo.WorkingDirectory = encoderPath;
@@ -194,7 +194,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
         public void ConvertImage(string imageFilePath, string convertedImagePath, string mimeType = "image/bmp")
         {
             var sb = new StringBuilder();
-            sb.Append("MusicianHelper.NativeVideoEncoderWrapper\\ImageConverter\\");
+            sb.Append("SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderWrapper\\ImageConverter\\");
             var config = "Release";
 #if DEBUG
             config = "Debug";
@@ -209,7 +209,7 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
 
             //strCommand is path and file name of command to run
-            pProcess.StartInfo.FileName = Path.Combine(converterPath, "MusicianHelper.GDIPlusImageConverter.exe");
+            pProcess.StartInfo.FileName = Path.Combine(converterPath, "SupermortalMediaFoundationVideoEncoder.GDIPlusImageConverter.exe");
 
             sb = new StringBuilder();
             sb.Append(imageFilePath);
@@ -220,11 +220,10 @@ namespace MusicianHelper.NativeVideoEncoderProcess
             //strCommandParameters are parameters to pass to program
             pProcess.StartInfo.Arguments = sb.ToString();
 
+            pProcess.StartInfo.RedirectStandardOutput = true;
+            pProcess.StartInfo.RedirectStandardError = true;
             pProcess.StartInfo.UseShellExecute = false;
-            pProcess.StartInfo.RedirectStandardOutput = true;
-
-            //Set output of program to be written to process output stream
-            pProcess.StartInfo.RedirectStandardOutput = true;
+            pProcess.StartInfo.CreateNoWindow = true;
 
             //Optional
             pProcess.StartInfo.WorkingDirectory = converterPath;

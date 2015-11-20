@@ -14,6 +14,7 @@
     <ProjectGuid>{0C53AC2D-224F-4395-9FCF-544F9CF7CD57}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MusicianHelperGDIPlusImageConverter</RootNamespace>
+    <ProjectName>SupermortalMediaFoundationVideoEncoder.GDIPlusImageConverter</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,7 +42,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\MusicianHelper.NativeVideoEncoderWrapper\ImageConverter\$(Configuration)</OutDir>
+    <OutDir>$(SolutionDir)\SupermortalMediaFoundationVideoEncoder.NativeVideoEncoderWrapper\ImageConverter\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
