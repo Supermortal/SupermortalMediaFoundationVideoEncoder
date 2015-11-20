@@ -22,7 +22,6 @@ namespace SupermortalMediaFoundationVideoEncoder.VideoEncoderWrapper.Tests
             };
 
             vew.Encode("..\\..\\..\\TEST\\paper-stained-3-texture.bmp", "..\\..\\..\\TEST\\sorry_dave.wav", outputPath);
-            //vew.Encode("C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\test.bmp", "C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\untitled.wav", outputPath);
 
             Assert.True(File.Exists(outputPath));
 
@@ -46,7 +45,6 @@ namespace SupermortalMediaFoundationVideoEncoder.VideoEncoderWrapper.Tests
             };
 
             vew.Encode("..\\..\\..\\TEST\\paper-stained-3-texture.bmp", "..\\..\\..\\TEST\\sorry_dave.mp3", outputPath);
-            //vew.Encode("C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\paper-stained-3-texture.bmp", "C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\sorry_dave.mp3", outputPath);
 
             Assert.True(File.Exists(outputPath));
 
@@ -73,7 +71,6 @@ namespace SupermortalMediaFoundationVideoEncoder.VideoEncoderWrapper.Tests
             };
 
             vew.Encode("..\\..\\..\\TEST\\test.jpg", "..\\..\\..\\TEST\\sorry_dave.wav", outputPath);
-            //vew.Encode("C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\test.jpg", "C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\sorry_dave.wav", outputPath);
 
             Assert.True(File.Exists(outputPath));
 
@@ -97,7 +94,6 @@ namespace SupermortalMediaFoundationVideoEncoder.VideoEncoderWrapper.Tests
             };
 
             vew.Encode("..\\..\\..\\TEST\\test.png", "..\\..\\..\\TEST\\sorry_dave.wav", outputPath);
-            //vew.Encode("C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\test.png", "C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\sorry_dave.wav", outputPath);
 
             Assert.True(File.Exists(outputPath));
 
@@ -130,7 +126,6 @@ namespace SupermortalMediaFoundationVideoEncoder.VideoEncoderWrapper.Tests
             };
 
             await vew.EncodeAsync("..\\..\\..\\TEST\\paper-stained-3-texture.bmp", "..\\..\\..\\TEST\\sorry_dave.wav", outputPath);
-            //vew.Encode("C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\test.bmp", "C:\\Users\\user\\Dropbox\\Cloud\\GitHub\\MusicianHelper\\TEST\\untitled.wav", outputPath);
         }
     }
 }
